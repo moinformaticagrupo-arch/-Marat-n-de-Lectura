@@ -4,20 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#12104d">
+  <meta name="description"
+    content="Maratón de Lectura 2026 - Escuela Técnica N°1 Independencia Argentina">
 
   <title>Maratón de Lectura | Escuela Técnica N°1</title>
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- =====================================================
+       FUENTES
+       ===================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-  <!-- =========================================
-       INTRO: VIDEO DE ENTRADA
-       ========================================= -->
+  <!-- =====================================================
+       INTRO — VIDEO DE ENTRADA
+       ===================================================== -->
 
-  <section id="intro" class="intro">
+  <section
+    id="intro"
+    class="intro"
+    aria-label="Introducción de la Maratón de Lectura"
+  >
 
     <video
       id="introVideo"
@@ -25,152 +46,363 @@
       muted
       playsinline
       preload="auto"
+      poster="assets/aficheeeee.jpeg"
     >
-      <source src="assets/introoo.mp4" type="video/mp4">
+      <source
+        src="assets/WhatsApp Video 2026-09-12 at 12.18.03 PM.mp4"
+        type="video/mp4"
+      >
+
       Tu navegador no puede reproducir este video.
     </video>
 
+
+    <!-- Capa oscura para mejorar la lectura -->
     <div class="intro-overlay">
+
 
       <div class="intro-title">
 
-        <span>📚</span>
+        <span
+          class="intro-icon"
+          aria-hidden="true"
+        >
+          📚
+        </span>
 
-        <h1>
-          MARATÓN DE<br>
-          LECTURA
-        </h1>
 
-        <span>🚀</span>
+        <div>
+
+          <span class="intro-small">
+            ESCUELA TÉCNICA N°1
+          </span>
+
+          <h1>
+            MARATÓN DE<br>
+            LECTURA
+          </h1>
+
+        </div>
+
+
+        <span
+          class="intro-icon"
+          aria-hidden="true"
+        >
+          🚀
+        </span>
 
       </div>
 
-      <button id="skipBtn" class="skip-btn">
-        Entrar a la maratón ✨
+
+      <p class="intro-subtitle">
+        Una aventura comienza con una página ✨
+      </p>
+
+
+      <button
+        id="skipBtn"
+        class="skip-btn"
+        type="button"
+      >
+        Entrar a la maratón
+        <span aria-hidden="true">🚀</span>
       </button>
+
 
     </div>
 
   </section>
 
 
-  <!-- =========================================
+
+  <!-- =====================================================
        PÁGINA PRINCIPAL
-       ========================================= -->
+       ===================================================== -->
 
   <main id="mainPage" class="hidden">
 
 
-    <!-- =========================================
+    <!-- ===================================================
          HERO PRINCIPAL
-         ========================================= -->
+         =================================================== -->
 
-    <header class="hero">
+    <header
+      class="hero"
+      id="inicio"
+    >
 
-      <div class="stars"></div>
+
+      <!-- =================================================
+           DECORACIONES
+           ================================================= -->
+
+      <div
+        class="hero-stars"
+        aria-hidden="true"
+      ></div>
 
 
-      <!-- IMÁGENES DECORATIVAS -->
+      <div
+        class="hero-glow hero-glow-one"
+        aria-hidden="true"
+      ></div>
+
+
+      <div
+        class="hero-glow hero-glow-two"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- COHETE -->
 
       <img
-        src="assets/WhatsApp Image 2026-09-09 at 8.11.30 PM.jpeg"
+        src="assets/piola.jpeg"
         class="decor rocket"
         alt=""
+        aria-hidden="true"
       >
-<img
+
+
+      <!-- ROBOT -->
+
+      <img
         src="assets/image.png"
         class="decor robot"
         alt=""
+        aria-hidden="true"
       >
 
-      >
+
+      <!-- ALIEN -->
 
       <img
-        src="assets/WhatsApp Image 2026-09-09 at 8.28.57 PM.jpeg"
+        src="assets/alien.jpeg"
         class="decor alien"
         alt=""
+        aria-hidden="true"
       >
 
 
-      <!-- NAVEGACIÓN -->
 
-      <nav>
+      <!-- =================================================
+           NAVEGACIÓN
+           ================================================= -->
 
-        <div class="brand">
-          📚 MARATÓN
-        </div>
+      <nav
+        class="main-nav"
+        aria-label="Navegación principal"
+      >
 
-        <a href="#cursos">
-          Cursos
-        </a>
-
-        <a href="#aventura">
-          La aventura
-        </a>
-
-      </nav>
-
-
-      <!-- CONTENIDO PRINCIPAL -->
-
-      <div class="hero-content">
-
-        <div class="hero-text">
-
-          <span class="badge">
-            ✨ MARATÓN DE LECTURA ✨
+        <a
+          href="#inicio"
+          class="brand"
+          aria-label="Ir al inicio"
+        >
+          <span
+            class="brand-icon"
+            aria-hidden="true"
+          >
+            📚
           </span>
 
-          <h1>
-            Un viaje por<br>
-            <strong>mundos increíbles</strong>
-          </h1>
+          <span>
+            MARATÓN
+          </span>
+        </a>
 
-          <p>
-            Elegí tu año, descubrí tus cuentos y
-            preparate para una aventura llena de historias.
-          </p>
 
-          <a
-            class="main-btn"
-            href="#cursos"
-          >
-            🚀 Comenzar a leer
+        <div class="nav-links">
+
+          <a href="#inicio">
+            Inicio
+          </a>
+
+          <a href="#aventura">
+            La aventura
+          </a>
+
+          <a href="#cursos">
+            Cursos
           </a>
 
         </div>
 
+      </nav>
+
+
+
+      <!-- =================================================
+           CONTENIDO DEL HERO
+           ================================================= -->
+
+      <div class="hero-content">
+
+
+        <div class="hero-text">
+
+
+          <span class="badge">
+            ✨ MARATÓN DE LECTURA 2026 ✨
+          </span>
+
+
+          <h1>
+            Un viaje por<br>
+
+            <strong>
+              mundos increíbles
+            </strong>
+          </h1>
+
+
+          <p>
+            Elegí tu año, descubrí tus cuentos y
+            preparate para una aventura llena de
+            historias, imaginación y nuevos mundos.
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              class="main-btn"
+              href="#cursos"
+            >
+              <span>🚀</span>
+              Comenzar a leer
+            </a>
+
+
+            <a
+              class="secondary-btn"
+              href="#aventura"
+            >
+              Descubrir la aventura
+              <span>↓</span>
+            </a>
+
+          </div>
+
+
+          <!-- Indicadores -->
+
+          <div class="hero-info">
+
+            <div class="hero-info-item">
+
+              <strong>
+                7
+              </strong>
+
+              <span>
+                Años
+              </span>
+
+            </div>
+
+
+            <div class="hero-info-item">
+
+              <strong>
+                14
+              </strong>
+
+              <span>
+                Cuentos
+              </span>
+
+            </div>
+
+
+            <div class="hero-info-item">
+
+              <strong>
+                ∞
+              </strong>
+
+              <span>
+                Aventuras
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
       </div>
+
+
+
+      <!-- Indicador de scroll -->
+
+      <div
+        class="scroll-indicator"
+        aria-hidden="true"
+      >
+
+        <span>
+          DESLIZÁ PARA EXPLORAR
+        </span>
+
+        <div class="scroll-arrow">
+          ↓
+        </div>
+
+      </div>
+
 
     </header>
 
 
-    <!-- =========================================
-         AFICHE OFICIAL DE LA ESCUELA
-         ========================================= -->
 
-    <section class="school-poster">
+    <!-- ===================================================
+         AFICHE OFICIAL
+         =================================================== -->
 
-      <div class="poster-glow"></div>
+    <section
+      class="school-poster"
+      aria-labelledby="posterTitle"
+    >
 
-      <img
-        src="assets/afiche.jpeg"
-        alt="Maratón de Lectura 2026 - Escuela Técnica N°1 Independencia Argentina"
-      >
+      <div
+        class="poster-glow"
+        aria-hidden="true"
+      ></div>
+
+
+      <div class="poster-image-wrapper">
+
+        <img
+          src="assets/aficheeeee.jpeg"
+          alt="Afiche oficial de la Maratón de Lectura 2026 de la Escuela Técnica N°1 Independencia Argentina"
+        >
+
+      </div>
+
 
       <div class="poster-content">
 
-        <span>
+        <span class="poster-tag">
           📚 EVENTO 2026 🚀
         </span>
 
-        <h2>
-          ¡Estamos listos para viajar!
+
+        <h2 id="posterTitle">
+          ¡Estamos listos<br>
+          para viajar!
         </h2>
 
+
         <p>
-          Una aventura de lectura comienza con una página.
+          Una aventura de lectura comienza
+          con una página.
         </p>
+
 
         <a
           class="poster-btn"
@@ -184,285 +416,555 @@
     </section>
 
 
-    <!-- =========================================
+
+    <!-- ===================================================
          LA AVENTURA
-         ========================================= -->
+         =================================================== -->
 
     <section
       id="aventura"
       class="adventure"
+      aria-labelledby="adventureTitle"
     >
 
-      <div>
+
+      <div class="adventure-content">
+
 
         <span class="mini-title">
           🌎 UNA AVENTURA
         </span>
 
-        <h2>
+
+        <h2 id="adventureTitle">
           Leer es viajar<br>
-          sin salir del lugar.
+          <strong>sin salir del lugar.</strong>
         </h2>
+
 
         <p>
           Cada cuento abre una puerta hacia un nuevo mundo.
-          Explorá las historias preparadas para cada curso.
+          Explorá las historias preparadas especialmente
+          para cada curso y dejate llevar por la imaginación.
         </p>
+
+
+        <div class="adventure-points">
+
+          <div>
+            <span>📖</span>
+            <strong>Historias</strong>
+            <small>para descubrir</small>
+          </div>
+
+
+          <div>
+            <span>🌎</span>
+            <strong>Mundos</strong>
+            <small>para explorar</small>
+          </div>
+
+
+          <div>
+            <span>✨</span>
+            <strong>Imaginación</strong>
+            <small>sin límites</small>
+          </div>
+
+        </div>
 
       </div>
 
-      <img
-        src="assets/WhatsApp Image 2026-09-09 at 8.14.40 PM.jpeg"
-        alt="Ilustración espacial"
-      >
+
+      <div class="adventure-image">
+
+        <img
+          src="assets/nave.jpeg"
+          alt="Nave espacial viajando por el espacio"
+        >
+
+      </div>
+
 
     </section>
 
 
-    <!-- =========================================
+
+    <!-- ===================================================
          CURSOS
-         ========================================= -->
+         =================================================== -->
 
     <section
       id="cursos"
       class="courses"
+      aria-labelledby="coursesTitle"
     >
+
 
       <div class="section-heading">
 
-        <span>
+        <span class="section-kicker">
           📖 ELEGÍ TU AÑO
         </span>
 
-        <h2>
-          ¿A qué aventura querés entrar?
+
+        <h2 id="coursesTitle">
+          ¿A qué aventura<br>
+          <strong>querés entrar?</strong>
         </h2>
+
 
         <p>
           En cada curso vas a encontrar 2 cuentos.
+          Elegí un año para comenzar tu aventura.
         </p>
 
       </div>
 
 
-      <!-- GRID DE CURSOS -->
+
+      <!-- =================================================
+           GRID DE CURSOS
+           ================================================= -->
 
       <div class="course-grid">
 
 
-        <!-- 1.º AÑO -->
+        <!-- ================= 1.º AÑO ================= -->
 
         <button
           class="course-card blue"
+          data-number="01"
+          type="button"
           onclick="openCourse(1)"
+          aria-label="Abrir cuentos de 1.º año"
         >
 
           <span class="number">
             01
           </span>
 
-          <span class="emoji">
+
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🚀
           </span>
 
-          <h3>
-            1.º AÑO
-          </h3>
 
-          <p>
-            2 cuentos
-          </p>
+          <span class="emoji" aria-hidden="true">
+            🚀
+          </span>
+
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              1.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 2.º AÑO -->
+
+        <!-- ================= 2.º AÑO ================= -->
 
         <button
           class="course-card red"
+          data-number="02"
+          type="button"
           onclick="openCourse(2)"
+          aria-label="Abrir cuentos de 2.º año"
         >
 
           <span class="number">
             02
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🤖
           </span>
 
-          <h3>
-            2.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            🤖
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              2.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 3.º AÑO -->
+
+        <!-- ================= 3.º AÑO ================= -->
 
         <button
           class="course-card pink"
+          data-number="03"
+          type="button"
           onclick="openCourse(3)"
+          aria-label="Abrir cuentos de 3.º año"
         >
 
           <span class="number">
             03
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🪐
           </span>
 
-          <h3>
-            3.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            🪐
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              3.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 4.º AÑO -->
+
+        <!-- ================= 4.º AÑO ================= -->
 
         <button
           class="course-card purple"
+          data-number="04"
+          type="button"
           onclick="openCourse(4)"
+          aria-label="Abrir cuentos de 4.º año"
         >
 
           <span class="number">
             04
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             👽
           </span>
 
-          <h3>
-            4.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            👽
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              4.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 5.º AÑO -->
+
+        <!-- ================= 5.º AÑO ================= -->
 
         <button
           class="course-card cyan"
+          data-number="05"
+          type="button"
           onclick="openCourse(5)"
+          aria-label="Abrir cuentos de 5.º año"
         >
 
           <span class="number">
             05
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🚀
           </span>
 
-          <h3>
-            5.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            🚀
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              5.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 6.º AÑO -->
+
+        <!-- ================= 6.º AÑO ================= -->
 
         <button
           class="course-card orange"
+          data-number="06"
+          type="button"
           onclick="openCourse(6)"
+          aria-label="Abrir cuentos de 6.º año"
         >
 
           <span class="number">
             06
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🤖
           </span>
 
-          <h3>
-            6.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            🤖
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              6.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
 
-        <!-- 7.º AÑO -->
+
+        <!-- ================= 7.º AÑO ================= -->
 
         <button
           class="course-card violet"
+          data-number="07"
+          type="button"
           onclick="openCourse(7)"
+          aria-label="Abrir cuentos de 7.º año"
         >
 
           <span class="number">
             07
           </span>
 
-          <span class="emoji">
+          <span
+            class="course-card-icon"
+            aria-hidden="true"
+          >
             🌎
           </span>
 
-          <h3>
-            7.º AÑO
-          </h3>
+          <span class="emoji" aria-hidden="true">
+            🌎
+          </span>
 
-          <p>
-            2 cuentos
-          </p>
+
+          <div class="course-card-content">
+
+            <span class="course-small">
+              AÑO
+            </span>
+
+            <h3>
+              7.º AÑO
+            </h3>
+
+            <p>
+              2 cuentos · Comenzá la aventura
+            </p>
+
+            <span class="course-action">
+              Explorar →
+            </span>
+
+          </div>
 
         </button>
 
+
       </div>
+
+
+      <!-- Mensaje debajo de los cursos -->
+
+      <div class="courses-footer-message">
+
+        <span aria-hidden="true">
+          ✨
+        </span>
+
+        <p>
+          Tu próxima aventura está a un clic.
+        </p>
+
+        <span aria-hidden="true">
+          ✨
+        </span>
+
+      </div>
+
 
     </section>
 
 
-    <!-- =========================================
+
+    <!-- ===================================================
          VISTA DE LOS CUENTOS
-         ========================================= -->
+         =================================================== -->
 
     <section
       id="courseView"
       class="course-view hidden"
+      aria-labelledby="courseTitle"
     >
 
 
-      <!-- VOLVER A LOS CURSOS -->
+      <!-- =================================================
+           TRANSICIÓN / CARGA DEL CURSO
+           ================================================= -->
+
+      <div
+        id="courseTransition"
+        class="course-transition"
+        aria-hidden="true"
+      >
+
+        <div class="transition-spinner"></div>
+
+        <span>
+          Preparando tu aventura...
+        </span>
+
+      </div>
+
+
+
+      <!-- VOLVER -->
 
       <button
         class="back-btn"
+        type="button"
         onclick="closeCourse()"
       >
-        ← Volver a los cursos
+        <span aria-hidden="true">←</span>
+        Volver a los cursos
       </button>
 
 
-      <!-- TÍTULO DEL CURSO -->
+
+      <!-- =================================================
+           CABECERA DEL CURSO
+           ================================================= -->
 
       <div class="course-view-title">
 
-        <span>
+
+        <div
+          class="course-view-icon"
+          aria-hidden="true"
+        >
           📚
-        </span>
+        </div>
+
 
         <div>
 
@@ -470,48 +972,139 @@
             MARATÓN DE LECTURA
           </span>
 
+
           <h2 id="courseTitle">
             1.º AÑO
           </h2>
+
+
+          <p class="course-view-subtitle">
+            Elegí una historia y comenzá a leer.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =================================================
+           INDICADOR
+           ================================================= -->
+
+      <div class="reading-intro">
+
+        <div class="reading-intro-icon">
+          📖
+        </div>
+
+        <div>
+
+          <strong>
+            2 historias te esperan
+          </strong>
+
+          <span>
+            Elegí una para comenzar tu viaje.
+          </span>
 
         </div>
 
       </div>
 
 
-      <!-- CUENTOS -->
+
+      <!-- =================================================
+           CUENTOS
+           ================================================= -->
 
       <div class="stories">
 
 
-        <!-- CUENTO 01 -->
+        <!-- ================= CUENTO 1 ================= -->
 
-        <article class="story">
+        <article class="story story-one">
 
-          <div class="book-cover">
-            📖
+
+          <!-- Portada -->
+
+          <div class="story-cover-wrapper">
+
+            <div
+              class="book-cover"
+              aria-hidden="true"
+            >
+
+              <span class="book-stars">
+                ✦ ✧ ✦
+              </span>
+
+              <span class="book-icon">
+                📖
+              </span>
+
+              <span class="book-label">
+                MARATÓN
+              </span>
+
+              <span class="book-number">
+                01
+              </span>
+
+            </div>
+
           </div>
 
-          <div>
+
+          <!-- Información -->
+
+          <div class="story-content">
 
             <span class="story-label">
               CUENTO 01
             </span>
 
+
             <h3 id="story1Title">
               Título del primer cuento
             </h3>
 
+
             <p id="story1Desc">
               Acá podés colocar una pequeña descripción
-              del cuento.
+              del cuento para invitar al lector a comenzar
+              la historia.
             </p>
+
+
+            <div class="story-meta">
+
+              <span>
+                📖 Lectura
+              </span>
+
+              <span>
+                ✨ Aventura
+              </span>
+
+            </div>
+
 
             <button
               class="read-btn"
+              type="button"
               onclick="readStory(1)"
             >
-              Leer cuento →
+              <span aria-hidden="true">
+                📖
+              </span>
+
+              Leer cuento
+
+              <span aria-hidden="true">
+                →
+              </span>
             </button>
 
           </div>
@@ -519,60 +1112,159 @@
         </article>
 
 
-        <!-- CUENTO 02 -->
 
-        <article class="story">
+        <!-- ================= CUENTO 2 ================= -->
 
-          <div class="book-cover pink-cover">
-            📕
+        <article class="story story-two">
+
+
+          <!-- Portada -->
+
+          <div class="story-cover-wrapper">
+
+            <div
+              class="book-cover pink-cover"
+              aria-hidden="true"
+            >
+
+              <span class="book-stars">
+                ✦ ✧ ✦
+              </span>
+
+              <span class="book-icon">
+                📕
+              </span>
+
+              <span class="book-label">
+                MARATÓN
+              </span>
+
+              <span class="book-number">
+                02
+              </span>
+
+            </div>
+
           </div>
 
-          <div>
+
+          <!-- Información -->
+
+          <div class="story-content">
 
             <span class="story-label">
               CUENTO 02
             </span>
 
+
             <h3 id="story2Title">
               Título del segundo cuento
             </h3>
 
+
             <p id="story2Desc">
               Acá podés colocar una pequeña descripción
-              del cuento.
+              del cuento para invitar al lector a comenzar
+              la historia.
             </p>
+
+
+            <div class="story-meta">
+
+              <span>
+                📕 Lectura
+              </span>
+
+              <span>
+                🌟 Imaginación
+              </span>
+
+            </div>
+
 
             <button
               class="read-btn"
+              type="button"
               onclick="readStory(2)"
             >
-              Leer cuento →
+              <span aria-hidden="true">
+                📖
+              </span>
+
+              Leer cuento
+
+              <span aria-hidden="true">
+                →
+              </span>
             </button>
 
           </div>
 
         </article>
 
+
       </div>
+
+
+
+      <!-- =================================================
+           VOLVER ABAJO
+           ================================================= -->
+
+      <div class="course-bottom">
+
+        <button
+          class="back-btn bottom-back"
+          type="button"
+          onclick="closeCourse()"
+        >
+          ← Elegir otro año
+        </button>
+
+      </div>
+
 
     </section>
 
 
-    <!-- =========================================
-         FOOTER / FIRMA
-         ========================================= -->
+
+    <!-- ===================================================
+         FOOTER
+         =================================================== -->
 
     <footer class="footer">
 
-      <div class="footer-brand">
-        📚 <strong>Maratón de Lectura</strong>
+
+      <div class="footer-decoration" aria-hidden="true">
+        ✦ ✧ ✦
       </div>
+
+
+      <div class="footer-brand">
+
+        <span aria-hidden="true">
+          📚
+        </span>
+
+        <strong>
+          Maratón de Lectura
+        </strong>
+
+      </div>
+
 
       <p class="footer-school">
         Escuela Técnica N°1 Independencia Argentina
       </p>
 
+
+      <p class="footer-message">
+        Toda gran aventura comienza con una historia.
+      </p>
+
+
       <div class="footer-line"></div>
+
 
       <div class="signature">
 
@@ -586,9 +1278,11 @@
 
       </div>
 
+
       <p class="footer-final">
         Una aventura comienza con una página. ✨
       </p>
+
 
     </footer>
 
@@ -596,12 +1290,14 @@
   </main>
 
 
-  <!-- =========================================
+
+  <!-- =====================================================
        JAVASCRIPT
-       ========================================= -->
+       ===================================================== -->
 
   <script src="app.js"></script>
 
 </body>
 
 </html>
+```
