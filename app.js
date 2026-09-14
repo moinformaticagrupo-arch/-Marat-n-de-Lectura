@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
                  {
                     title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
                     description: "Autor:Isaac Asimov.",
-                    pdf: "4-1.pdf"
-                }
+                    pdf: "4to año/la_maquina_que_gano_la_guerra.pdf"
+                } 
             ]
         },
         5: {
