@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     pdf: "1-2.pdf"
                 },
                 {
-                    title: "La última noche del mundo",
-                    description: "Autor:  Ray Bradbury ",
+                    title: "LA ÚLTIMA NOCHE DEL MUNDO ",
+                    description: "Autor: Ray Bradbury ",
                     pdf: "1-3.pdf"
                 }
             ]
@@ -58,13 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     pdf: "2-1.pdf"
                 },
                 {
-                    title: "Lectura 2",
-                    description: "Segunda lectura de 2.º año.",
+                    title: "CASESETTE",
+                    description: "Autor: Enrique Anderson Imbert.",
                     pdf: "2-2.pdf"
                 },
                  {
-                    title: "Lectura 3",
-                    description: "Segunda lectura de 2.º año.",
+                    title: "LAS ABEJAS DE BRONCE",
+                    description: "Autor: Marco Denevi.",
                     pdf: "2-2.pdf"
                 }
             ]
