@@ -72,11 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
         3: {
             title: "3.º AÑO",
             stories: [
-                {,
+                {
                     title: "LA ABUELA ELECTRÓNICA",
                     description: "Autor: Silvia Schujer.",
                     pdf: "3-1.pdf"
-                }
+                },
                 {
                     title: "EL CLON",
                     description: "Autor: Ricardo Mariño.",
