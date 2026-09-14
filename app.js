@@ -73,8 +73,18 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "3.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Lectura de 3.º año.",
+                    title: "LA ABUELA ELECTRÓNICA",
+                    description: "Autor: Silvia Schujer.",
+                    pdf: "3-1.pdf"
+                }
+                {
+                    title: "EL CLON",
+                    description: "Autor: Ricardo Mariño.",
+                    pdf: "3-1.pdf"
+                }
+                 {
+                    title: "COMO SE DIVERTÍAN",
+                    description: "Autor: Isaac Asimov.",
                     pdf: "3-1.pdf"
                 }
             ]
@@ -83,8 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "4.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Lectura de 4.º año.",
+                    title: "LA TIENDA MÁGICA",
+                    description: "Autor: H.G Wells.",
+                    pdf: "4-1.pdf"
+                }
+                 {
+                    title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
+                    description: "Autor:Isaac Asimov.",
                     pdf: "4-1.pdf"
                 }
             ]
