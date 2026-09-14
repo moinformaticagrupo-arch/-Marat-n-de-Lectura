@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                  {
                     title: "LAS ABEJAS DE BRONCE",
                     description: "Autor: Marco Denevi.",
-                    pdf: "2-2.pdf"
+                    pdf: "2do año/las_abejas_de_bronce.pdf"
                 }
             ]
         },
