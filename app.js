@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "CRÓNICAS MARCIANAS",
                     description: "Autor: Ray Bradbury.",
-                    pdf: "6-1.pdf"
+                    pdf: "6to año/Ray Bradbury - Cronicas Marcianas.pdf"
                 }
             ]
         },
