@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     title: "EL CLON",
                     description: "Autor: Ricardo Mariño.",
                     pdf: "3-1.pdf"
-                },
+                }, 
                  {
                     title: "COMO SE DIVERTÍAN",
                     description: "Autor: Isaac Asimov.",
-                    pdf: "3-1.pdf"
+                    pdf: "3er año/cuanto_se_divertian.pdf"
                 }
             ]
         },
