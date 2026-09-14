@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "1.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Primera lectura de 1.º año.",
+                    title: "CUENTO DE NAVIDAD",
+                    description: "Autor: Ray Bradbury",
                     pdf: "1-1.pdf"
                 },
                 {
