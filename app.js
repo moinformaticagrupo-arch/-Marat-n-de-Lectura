@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "CASESETTE",
                     description: "Autor: Enrique Anderson Imbert.",
-                    pdf: "2-2.pdf"
+                    pdf: "2do año/cassette.pdf"
                 },
                  {
                     title: "LAS ABEJAS DE BRONCE",
