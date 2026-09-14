@@ -53,18 +53,18 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "2.º AÑO",
             stories: [
                 {
-                    title: "AUTENTICO AMOR",
+                    title: "AUTÉNTICO AMOR",
                     description: "Autor: Isaac Asimov",
                     pdf: "2-1.pdf"
                 },
                 {
-                    title: "CASESETTE",
+                    title: "CASSETTE",
                     description: "Autor: Enrique Anderson Imbert.",
                     pdf: "2do año/cassette.pdf"
                 },
                  {
-                    title: "LAS ABEJAS DE BRONCE",
-                    description: "Autor: Marco Denevi.",
+                    title: "SIN DORMIR,",
+                    description: "Autor: Darío Levin.",
                     pdf: "2do año/las_abejas_de_bronce.pdf"
                 }
             ]
