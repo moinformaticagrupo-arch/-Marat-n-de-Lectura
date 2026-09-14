@@ -262,3 +262,22 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("introVideo");
+    const audioToggleBtn = document.getElementById("audioToggleBtn");
+
+    if (audioToggleBtn && video) {
+        // Arranca muteado para cumplir con las políticas de autoplay de los navegadores
+        video.muted = true;
+
+        audioToggleBtn.addEventListener("click", function() {
+            video.muted = !video.muted;
+            
+            if (video.muted) {
+                audioToggleBtn.textContent = "🔇 Activar música";
+            } else {
+                audioToggleBtn.textContent = "🔊 Silenciar";
+            }
+        });
+    }
+});
