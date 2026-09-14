@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "LA ABUELA ELECTRÓNICA",
                     description: "Autor: Silvia Schujer.",
-                    pdf: "3-1.pdf"
-                },
+                    pdf: "3er año/la-abuela-electronica2.pdf"
+                }, 
                 {
                     title: "EL CLON",
                     description: "Autor: Ricardo Mariño.",
