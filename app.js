@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "LA TIENDA MÁGICA",
                     description: "Autor: H.G Wells.",
-                    pdf: "4-1.pdf"
-                },
+                    pdf: "4to año/La tienda magica.pdf"
+                }, 
                  {
                     title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
                     description: "Autor:Isaac Asimov.",
