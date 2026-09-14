@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     title: "Lectura 2",
                     description: "Segunda lectura de 2.º año.",
                     pdf: "2-2.pdf"
-                }
+                },
                  {
                     title: "Lectura 3",
                     description: "Segunda lectura de 2.º año.",
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     title: "EL DOCTOR OX",
                     description: "Autor: Julio Verne",
                     pdf: "5-2.pdf"
-                }
+                },
                  {
                     title: "EL PEATÓN",
                     description: "Autor: Ray Bradbury",
