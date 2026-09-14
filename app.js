@@ -38,13 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     pdf: "1-1.pdf"
                 },
                 {
-                    title: "Lectura 2",
-                    description: "Segunda lectura de 1.º año.",
+                    title: "EL MEJOR AMIGO DE UN MUCHACHO",
+                    description: "Autor: Isaac Asimov ",
                     pdf: "1-2.pdf"
                 },
                 {
-                    title: "Lectura 3",
-                    description: "Tercera lectura de 1.º año.",
+                    title: "La última noche del mundo",
+                    description: "Autor:  Ray Bradbury ",
                     pdf: "1-3.pdf"
                 }
             ]
