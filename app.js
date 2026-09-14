@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "EL DOCTOR OX",
                     description: "Autor: Julio Verne",
-                    pdf: "5-2.pdf"
+                    pdf: "5to año/el-doctor-ox.pdf"
                 },
                  {
                     title: "EL PEATÓN",
