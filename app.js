@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                  {
                     title: "SIN DORMIR,",
                     description: "Autor: Darío Levin.",
-                    pdf: "2do año/las_abejas_de_bronce.pdf"
+                    pdf: "sin dormir.pdf"
                 }
             ]
         },
