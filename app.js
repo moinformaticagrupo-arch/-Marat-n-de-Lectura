@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                  {
                     title: "EL PEATÓN",
                     description: "Autor: Ray Bradbury",
-                    pdf: "5-2.pdf"
+                    pdf: "5to año/Ray Bradbury - El Peaton.pdf"
                 }
             ]
         },
