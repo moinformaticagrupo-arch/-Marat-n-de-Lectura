@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "EL CLON",
                     description: "Autor: Ricardo Mariño.",
-                    pdf: "3-1.pdf"
+                    pdf: "3er año/Cuento EL CLON.pdf"
                 }, 
                  {
                     title: "COMO SE DIVERTÍAN",
