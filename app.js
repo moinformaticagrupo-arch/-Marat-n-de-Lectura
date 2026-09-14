@@ -53,12 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "2.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Primera lectura de 2.º año.",
+                    title: "AUTENTICO AMOR",
+                    description: "Autor: Isaac Asimov",
                     pdf: "2-1.pdf"
                 },
                 {
                     title: "Lectura 2",
+                    description: "Segunda lectura de 2.º año.",
+                    pdf: "2-2.pdf"
+                }
+                 {
+                    title: "Lectura 3",
                     description: "Segunda lectura de 2.º año.",
                     pdf: "2-2.pdf"
                 }
@@ -88,13 +93,18 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "5.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Primera lectura de 5.º año.",
+                    title: "EL CENTINELA",
+                    description: "Autor: Arthur Clarke",
                     pdf: "5-1.pdf"
                 },
                 {
-                    title: "Lectura 2",
-                    description: "Segunda lectura de 5.º año.",
+                    title: "EL DOCTOR OX",
+                    description: "Autor: Julio Verne",
+                    pdf: "5-2.pdf"
+                }
+                 {
+                    title: "EL PEATÓN",
+                    description: "Autor: Ray Bradbury",
                     pdf: "5-2.pdf"
                 }
             ]
@@ -103,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "6.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Lectura de 6.º año.",
+                    title: "CRÓNICAS MARCIANAS",
+                    description: "Autor: Ray Bradbury.",
                     pdf: "6-1.pdf"
                 }
             ]
@@ -113,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "7.º AÑO",
             stories: [
                 {
-                    title: "Lectura 1",
-                    description: "Lectura de 7.º año.",
+                    title: "EL ENTERNAUTA",
+                    description: "Autor:Hector G.",
                     pdf: "7-1.pdf"
                 }
             ]
