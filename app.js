@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "EL CENTINELA",
                     description: "Autor: Arthur Clarke",
-                    pdf: "5-1.pdf"
-                },
+                    pdf: "5to año/el-centinela-de-arthur-c-clarke-1.pdf"
+                }, 
                 {
                     title: "EL DOCTOR OX",
                     description: "Autor: Julio Verne",
