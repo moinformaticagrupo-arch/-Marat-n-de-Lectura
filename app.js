@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "Lectura 1",
                     description: "Primera lectura de 1.º año.",
-                    pdf: "assets/cuentos/1-1.pdf"
+                    pdf: "1-1.pdf"
                 },
                 {
                     title: "Lectura 2",
