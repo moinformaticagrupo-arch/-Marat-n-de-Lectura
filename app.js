@@ -5,81 +5,149 @@ const skipBtn = document.getElementById("skipBtn");
 const courseView = document.getElementById("courseView");
 const courses = document.getElementById("cursos");
 
-// Año que está seleccionado actualmente
+// =====================================================
+// AÑO SELECCIONADO
+// =====================================================
+
 let currentCourse = 1;
 
 // =====================================================
 // DATOS DE LOS CURSOS
 // =====================================================
+// Cada año tiene la cantidad EXACTA de PDFs que corresponde.
+//
+// 1.º año → 3 PDFs
+// 2.º año → 2 PDFs
+// 3.º año → 1 PDF
+// 4.º año → 1 PDF
+// 5.º año → 2 PDFs
+// 6.º año → 1 PDF
+// 7.º año → 1 PDF
+// =====================================================
 
 const courseData = {
-  1: [
-    "1.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
 
-  2: [
-    "2.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
+    1: {
+        title: "1.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/1-1.pdf"
+            },
+            {
+                title: "Lectura 2",
+                pdf: "assets/cuentos/1-2.pdf"
+            },
+            {
+                title: "Lectura 3",
+                pdf: "assets/cuentos/1-3.pdf"
+            }
+        ]
+    },
 
-  3: [
-    "3.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
+    2: {
+        title: "2.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/2-1.pdf"
+            },
+            {
+                title: "Lectura 2",
+                pdf: "assets/cuentos/2-2.pdf"
+            }
+        ]
+    },
 
-  4: [
-    "4.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
+    3: {
+        title: "3.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/3-1.pdf"
+            }
+        ]
+    },
 
-  5: [
-    "5.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
+    4: {
+        title: "4.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/4-1.pdf"
+            }
+        ]
+    },
 
-  6: [
-    "6.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ],
+    5: {
+        title: "5.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/5-1.pdf"
+            },
+            {
+                title: "Lectura 2",
+                pdf: "assets/cuentos/5-2.pdf"
+            }
+        ]
+    },
 
-  7: [
-    "7.º AÑO",
-    "Título del primer cuento",
-    "Título del segundo cuento"
-  ]
+    6: {
+        title: "6.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/6-1.pdf"
+            }
+        ]
+    },
+
+    7: {
+        title: "7.º AÑO",
+        stories: [
+            {
+                title: "Lectura 1",
+                pdf: "assets/cuentos/7-1.pdf"
+            }
+        ]
+    }
+
 };
-
 
 // =====================================================
 // ENTRAR A LA PÁGINA DESPUÉS DEL VIDEO
 // =====================================================
 
 function enterSite() {
-  intro.classList.add("hidden");
-  mainPage.classList.remove("hidden");
 
-  window.scrollTo({
-    top: 0,
-    behavior: "instant"
-  });
+    if (intro) {
+        intro.classList.add("hidden");
+    }
 
-  video.pause();
+    if (mainPage) {
+        mainPage.classList.remove("hidden");
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+
+    if (video) {
+        video.pause();
+    }
 }
 
-
 // Cuando termina el video
-video.addEventListener("ended", enterSite);
+if (video) {
+    video.addEventListener("ended", enterSite);
+}
 
 // Botón "Entrar a la maratón"
-skipBtn.addEventListener("click", enterSite);
-
+if (skipBtn) {
+    skipBtn.addEventListener("click", enterSite);
+}
 
 // =====================================================
 // ABRIR UN CURSO
@@ -87,37 +155,143 @@ skipBtn.addEventListener("click", enterSite);
 
 function openCourse(year) {
 
-  // Guardamos qué año seleccionó el usuario
-  currentCourse = year;
+    currentCourse = Number(year);
 
-  // Buscamos los datos del curso
-  const data = courseData[year];
+    const data = courseData[currentCourse];
 
-  // Cambiamos el título del curso
-  document.getElementById("courseTitle").textContent = data[0];
+    if (!data) {
+        console.error("No existe información para el año:", currentCourse);
+        return;
+    }
 
-  // Cambiamos el nombre del cuento 1
-  document.getElementById("story1Title").textContent = data[1];
+    // -------------------------------------------------
+    // TÍTULO DEL CURSO
+    // -------------------------------------------------
 
-  // Cambiamos el nombre del cuento 2
-  document.getElementById("story2Title").textContent = data[2];
+    const courseTitle = document.getElementById("courseTitle");
 
-  // Mostramos la sección del curso
-  courseView.classList.remove("hidden");
+    if (courseTitle) {
+        courseTitle.textContent = data.title;
+    }
 
-  // Ocultamos la lista de cursos
-  courses.classList.add("hidden");
+    // -------------------------------------------------
+    // CONTENEDOR DE LECTURAS
+    // -------------------------------------------------
 
-  // Ocultamos la sección "La aventura"
-  document.getElementById("aventura").classList.add("hidden");
+    /*
+       Si existe un contenedor llamado "storiesContainer"
+       en el HTML, generamos automáticamente todos
+       los botones según la cantidad de PDFs del año.
+    */
 
-  // Subimos hasta la sección del curso
-  window.scrollTo({
-    top: courseView.offsetTop - 20,
-    behavior: "smooth"
-  });
+    const storiesContainer =
+        document.getElementById("storiesContainer");
+
+    if (storiesContainer) {
+
+        storiesContainer.innerHTML = "";
+
+        data.stories.forEach((story, index) => {
+
+            const card = document.createElement("div");
+
+            card.className = "story-card";
+
+            card.innerHTML = `
+                <h3>${story.title}</h3>
+
+                <button
+                    type="button"
+                    class="read-story-btn"
+                    onclick="readStory(${index + 1})"
+                >
+                    📖 Leer PDF
+                </button>
+            `;
+
+            storiesContainer.appendChild(card);
+
+        });
+
+    } else {
+
+        // -------------------------------------------------
+        // COMPATIBILIDAD CON TU HTML ACTUAL
+        // -------------------------------------------------
+
+        const story1Title =
+            document.getElementById("story1Title");
+
+        const story2Title =
+            document.getElementById("story2Title");
+
+        if (story1Title) {
+            story1Title.textContent =
+                data.stories[0]
+                    ? data.stories[0].title
+                    : "";
+        }
+
+        if (story2Title) {
+            story2Title.textContent =
+                data.stories[1]
+                    ? data.stories[1].title
+                    : "";
+        }
+
+        // Si hay un tercer PDF y existe un elemento para él
+        const story3Title =
+            document.getElementById("story3Title");
+
+        if (story3Title) {
+            story3Title.textContent =
+                data.stories[2]
+                    ? data.stories[2].title
+                    : "";
+        }
+    }
+
+    // -------------------------------------------------
+    // MOSTRAR CURSO
+    // -------------------------------------------------
+
+    if (courseView) {
+        courseView.classList.remove("hidden");
+    }
+
+    // -------------------------------------------------
+    // OCULTAR LISTA DE CURSOS
+    // -------------------------------------------------
+
+    if (courses) {
+        courses.classList.add("hidden");
+    }
+
+    // -------------------------------------------------
+    // OCULTAR "LA AVENTURA"
+    // -------------------------------------------------
+
+    const aventura =
+        document.getElementById("aventura");
+
+    if (aventura) {
+        aventura.classList.add("hidden");
+    }
+
+    // -------------------------------------------------
+    // SUBIR HASTA EL CURSO
+    // -------------------------------------------------
+
+    if (courseView) {
+
+        window.scrollTo({
+            top: courseView.offsetTop - 20,
+            behavior: "smooth"
+        });
+
+    }
+
 }
-
 
 // =====================================================
 // VOLVER A LOS CURSOS
@@ -125,47 +299,114 @@ function openCourse(year) {
 
 function closeCourse() {
 
-  // Ocultamos la sección del curso
-  courseView.classList.add("hidden");
+    if (courseView) {
+        courseView.classList.add("hidden");
+    }
 
-  // Mostramos nuevamente los cursos
-  courses.classList.remove("hidden");
+    if (courses) {
+        courses.classList.remove("hidden");
+    }
 
-  // Mostramos nuevamente "La aventura"
-  document.getElementById("aventura").classList.remove("hidden");
+    const aventura =
+        document.getElementById("aventura");
 
-  // Volvemos a la sección de cursos
-  window.scrollTo({
-    top: courses.offsetTop - 20,
-    behavior: "smooth"
-  });
+    if (aventura) {
+        aventura.classList.remove("hidden");
+    }
+
+    if (courses) {
+
+        window.scrollTo({
+            top: courses.offsetTop - 20,
+            behavior: "smooth"
+        });
+
+    }
+
 }
 
-
 // =====================================================
-// ABRIR LOS PDF DE LOS CUENTOS
+// ABRIR PDF
 // =====================================================
 
 function readStory(number) {
 
-  /*
-    Los PDFs tienen que estar dentro de:
+    const yearData = courseData[currentCourse];
 
-    assets/cuentos/
+    if (!yearData) {
+        console.error(
+            "No existe información para el año:",
+            currentCourse
+        );
 
-    Y tienen que llamarse:
+        return;
+    }
 
-    https://www.alejandrolindt.com.ar/lindt_recursos_gabriel-rolon-el-duelo.pdf  = 1.º año, cuento 1
-    1-2.pdf  = 1.º año, cuento 2
+    const storyIndex = Number(number) - 1;
 
-    2-1.pdf  = 2.º año, cuento 1
-    2-2.pdf  = 2.º año, cuento 2
+    const story = yearData.stories[storyIndex];
 
-    etc.
-  */
+    if (!story) {
 
-  const pdf = `assets/cuentos/${currentCourse}-${number}.pdf`;
+        console.error(
+            `No existe el PDF ${number} para ${yearData.title}`
+        );
 
-  // Abrimos el PDF en una nueva pestaña
-  window.open(pdf, "_blank");
+        alert(
+            `No hay una lectura ${number} disponible para ${yearData.title}.`
+        );
+
+        return;
+    }
+
+    // -------------------------------------------------
+    // ABRIR PDF EN NUEVA PESTAÑA
+    // -------------------------------------------------
+
+    window.open(
+        story.pdf,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
 }
+
+// =====================================================
+// FUNCIÓN PARA OBTENER LOS DATOS DEL AÑO ACTUAL
+// =====================================================
+
+function getCurrentCourseData() {
+
+    return courseData[currentCourse];
+
+}
+
+// =====================================================
+// FUNCIÓN PARA SABER CUÁNTOS PDFs TIENE UN AÑO
+// =====================================================
+
+function getCoursePdfCount(year) {
+
+    const data = courseData[Number(year)];
+
+    if (!data) {
+        return 0;
+    }
+
+    return data.stories.length;
+
+}
+
+// =====================================================
+// MOSTRAR LOS PDFs DISPONIBLES EN CONSOLA
+// =====================================================
+
+console.log("📚 Maratón de Lectura cargada correctamente.");
+
+Object.keys(courseData).forEach(year => {
+
+    console.log(
+        `${courseData[year].title}: ${courseData[year].stories.length} PDF(s)`
+    );
+
+});
