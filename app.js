@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "EL ENTERNAUTA",
                     description: "Autor:Hector G.",
-                    pdf: "El_Eternauta_Adaptacion.pdf"
+                    pdf: "El_Eternauta_menos_25MB.pdf"
                 }
             ]
         }
