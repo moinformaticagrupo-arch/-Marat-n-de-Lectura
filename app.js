@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stories: [
                 {
                     title: "ROBOT-MASA",
-                    description: "Autor: H.G Wells.",
+                    description: "Autor:Sebastián Szabo.",
                     pdf: "Robot-masa "
                 }, 
                  {
