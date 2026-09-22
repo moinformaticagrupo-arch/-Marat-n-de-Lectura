@@ -306,3 +306,90 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+// =====================================================
+// LÓGICA: RINCÓN DE OPINIONES Y COMPARTIR QR
+// =====================================================
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Opiniones ---
+    const formOpinion = document.getElementById('formOpinion');
+    const muroOpiniones = document.getElementById('muroOpiniones');
+
+    if (formOpinion && muroOpiniones) {
+        let opiniones = JSON.parse(localStorage.getItem('maraton_opiniones')) || [
+            {
+                nombre: "Profe de Literatura",
+                libro: "El Eternauta (Oesterheld)",
+                texto: "¡Excelente iniciativa la de digitalizar estos clásicos para la técnica! Muy buena la página."
+            }
+        ];
+
+        function renderizarOpiniones() {
+            muroOpiniones.innerHTML = '';
+            opiniones.forEach(op => {
+                const card = document.createElement('div');
+                card.className = 'opinion-card';
+                card.innerHTML = `
+                    <div>
+                        <h4>${op.nombre}</h4>
+                        <span class="libro-tag">📖 ${op.libro}</span>
+                        <p>"${op.texto}"</p>
+                    </div>
+                `;
+                muroOpiniones.appendChild(card);
+            });
+        }
+
+        formOpinion.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nuevaOpinion = {
+                nombre: document.getElementById('nombreAlumno').value.trim(),
+                libro: document.getElementById('libroSelect').value,
+                texto: document.getElementById('textoOpinion').value.trim()
+            };
+
+            opiniones.unshift(nuevaOpinion);
+            localStorage.setItem('maraton_opiniones', JSON.stringify(opiniones));
+
+            renderizarOpiniones();
+            formOpinion.reset();
+        });
+
+        renderizarOpiniones();
+    }
+
+    // --- Modal de Compartir / QR ---
+    const btnCompartir = document.getElementById('btnCompartir');
+    const modalCompartir = document.getElementById('modalCompartir');
+    const cerrarModal = document.getElementById('cerrarModal');
+    const btnCopiar = document.getElementById('btnCopiar');
+    const copiadoMsg = document.getElementById('copiadoMsg');
+
+    if (btnCompartir && modalCompartir) {
+        btnCompartir.addEventListener('click', () => {
+            modalCompartir.style.display = 'flex';
+        });
+
+        if (cerrarModal) {
+            cerrarModal.addEventListener('click', () => {
+                modalCompartir.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalCompartir) {
+                modalCompartir.style.display = 'none';
+            }
+        });
+    }
+
+    if (btnCopiar && copiadoMsg) {
+        btnCopiar.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href);
+            copiadoMsg.style.display = 'block';
+            setTimeout(() => {
+                copiadoMsg.style.display = 'none';
+            }, 3000);
+        });
+    }
+});
