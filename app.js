@@ -1,12 +1,12 @@
 // =====================================================
 // MARATÓN DE LECTURA 2026
-// app.js
+// app.js (Unificado y Corregido)
 // =====================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
     // =================================================
-    // ELEMENTOS
+    // 1. ELEMENTOS GLOBALES
     // =================================================
 
     const intro = document.getElementById("intro");
@@ -17,15 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const courses = document.getElementById("cursos");
     const aventura = document.getElementById("aventura");
     const storiesContainer = document.getElementById("storiesContainer");
+    const audioToggleBtn = document.getElementById("audioToggleBtn");
 
     // =================================================
-    // ESTADO ACTUAL
+    // 2. ESTADO ACTUAL
     // =================================================
 
     let currentCourse = 1;
 
     // =================================================
-    // DATOS DE LOS CURSOS
+    // 3. DATOS DE LOS CURSOS
     // =================================================
 
     const courseData = {
@@ -94,12 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
             stories: [
                 {
                     title: "ROBOT-MASA",
-                    description: "Autor:Sebastián Szabo.",
+                    description: "Autor: Sebastián Szabo.",
                     pdf: "Robot-masa.pdf "
                 }, 
                  {
                     title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
-                    description: "Autor:Isaac Asimov.",
+                    description: "Autor: Isaac Asimov.",
                     pdf: "4to año/la_maquina_que_gano_la_guerra.pdf"
                 } 
             ]
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
             stories: [
                 {
                     title: "EL ENTERNAUTA",
-                    description: "Autor:Hector G.",
+                    description: "Autor: Hector G.",
                     pdf: "El_Eternauta_menos_25MB.pdf"
                 }
             ]
@@ -147,13 +148,34 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // =================================================
-    // ENTRAR A LA PÁGINA
+    // 4. CONTROL DE AUDIO E INTRO
     // =================================================
+
+    if (video) {
+        video.muted = true; // Arranca muteado por políticas del navegador
+    }
+
+    if (audioToggleBtn && video) {
+        audioToggleBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            video.muted = !video.muted;
+
+            if (video.muted) {
+                audioToggleBtn.textContent = "🔇 Activar música";
+            } else {
+                audioToggleBtn.textContent = "🔊 Silenciar";
+                video.play().catch(err => console.log("Bloqueado por autoplay:", err));
+            }
+        });
+    }
 
     function enterSite() {
         if (intro) intro.classList.add("hidden");
         if (mainPage) mainPage.classList.remove("hidden");
-        if (video) video.pause();
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
 
         window.scrollTo({
             top: 0,
@@ -165,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (skipBtn) skipBtn.addEventListener("click", enterSite);
 
     // =================================================
-    // ABRIR CURSO
+    // 5. NAVEGACIÓN DE CURSOS Y LECTURAS (PDFs)
     // =================================================
 
     window.openCourse = function (year) {
@@ -231,10 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 100);
     };
 
-    // =================================================
-    // CERRAR CURSO
-    // =================================================
-
     window.closeCourse = function () {
         if (courseView) courseView.classList.add("hidden");
         if (courses) courses.classList.remove("hidden");
@@ -249,10 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 100);
         }
     };
-
-    // =================================================
-    // ABRIR PDF
-    // =================================================
 
     window.readStory = function (number) {
         const data = courseData[currentCourse];
@@ -273,10 +287,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open(story.pdf, "_blank");
     };
 
-    // =================================================
-    // FUNCIONES AUXILIARES
-    // =================================================
-
     window.getCurrentCourseData = function () {
         return courseData[currentCourse];
     };
@@ -286,31 +296,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return data ? data.stories.length : 0;
     };
 
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("introVideo");
-    const audioToggleBtn = document.getElementById("audioToggleBtn");
+    // =================================================
+    // 6. RINCÓN DE OPINIONES Y MODAL DE COMPARTIR (QR)
+    // =================================================
 
-    if (audioToggleBtn && video) {
-        // Arranca muteado para cumplir con las políticas de autoplay de los navegadores
-        video.muted = true;
-
-        audioToggleBtn.addEventListener("click", function() {
-            video.muted = !video.muted;
-            
-            if (video.muted) {
-                audioToggleBtn.textContent = "🔇 Activar música";
-            } else {
-                audioToggleBtn.textContent = "🔊 Silenciar";
-            }
-        });
-    }
-});
-// =====================================================
-// LÓGICA: RINCÓN DE OPINIONES Y COMPARTIR QR
-// =====================================================
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Opiniones ---
     const formOpinion = document.getElementById('formOpinion');
     const muroOpiniones = document.getElementById('muroOpiniones');
 
@@ -358,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarOpiniones();
     }
 
-    // --- Modal de Compartir / QR ---
     const btnCompartir = document.getElementById('btnCompartir');
     const modalCompartir = document.getElementById('modalCompartir');
     const cerrarModal = document.getElementById('cerrarModal');
@@ -392,4 +380,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
+
 });
