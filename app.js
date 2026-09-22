@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "4.º AÑO",
             stories: [
                 {
-                    title: "LA TIENDA MÁGICA",
+                    title: "ROBOT-MASA",
                     description: "Autor: H.G Wells.",
-                    pdf: "4to año/La tienda magica.pdf"
+                    pdf: "Robot-masa "
                 }, 
                  {
                     title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
