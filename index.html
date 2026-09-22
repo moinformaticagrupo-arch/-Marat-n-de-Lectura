@@ -1013,7 +1013,129 @@
     </footer>
 
 </main>
+<!-- =====================================================
+         FOOTER
+         ===================================================== -->
 
+    <!-- NUEVA SECCIÓN: RINCÓN DE OPINIONES -->
+    <section id="opiniones" class="opiniones-section" aria-labelledby="opinionesTitle">
+        <div class="section-heading">
+            <span class="section-kicker">💬 RINCÓN LITERARIO</span>
+            <h2 id="opinionesTitle">
+                ¿Qué te pareció el<br>
+                <strong>cuento?</strong>
+            </h2>
+            <p>Dejanos tu opinión, reseña o qué te hizo sentir la lectura en esta maratón.</p>
+        </div>
+
+        <div class="opiniones-container">
+            <!-- Formulario para dejar opinión -->
+            <form id="formOpinion" class="opinion-form">
+                <div class="form-group">
+                    <input type="text" id="nombreAlumno" placeholder="Tu nombre / Curso (ej: Juan - 3° Año)" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <select id="libroSelect" required>
+                        <option value="" disabled selected>Seleccioná el cuento o libro...</option>
+                        <option value="Cuánto se divertían (Asimov)">Cuánto se divertían (Asimov)</option>
+                        <option value="Las abejas de bronce (Denevi)">Las abejas de bronce (Denevi)</option>
+                        <option value="El Eternauta (Oesterheld)">El Eternauta (Oesterheld)</option>
+                        <option value="Otro cuento de la maratón">Otro cuento de la maratón</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="textoOpinion" placeholder="Escribí tu reseña o qué te pareció la historia..." rows="3" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">🚀 Publicar Opinión</button>
+            </form>
+
+            <!-- Muro donde aparecen las opiniones -->
+            <div id="muroOpiniones" class="muro-grid">
+                <!-- Se cargan dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div
+            class="footer-decoration"
+            aria-hidden="true">
+            ✦ ✧ ✦
+        </div>
+
+        <div class="footer-brand">
+
+            <span aria-hidden="true">
+                📚
+            </span>
+
+            <strong>
+                Maratón de Lectura
+            </strong>
+
+        </div>
+
+        <p class="footer-school">
+            Escuela Técnica N°1 Independencia Argentina
+        </p>
+
+        <p class="footer-message">
+            Toda gran aventura comienza con una historia.
+        </p>
+
+        <div class="footer-line"></div>
+
+        <div class="signature">
+
+            <span>
+                Hecha por
+            </span>
+
+            <strong>
+                LFR Code💻
+            </strong>
+
+        </div>
+
+        <p class="footer-final">
+            Una aventura comienza con una página. ✨
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- =====================================================
+     BOTÓN FLOTANTE Y MODAL DE COMPARTIR / QR (OPCIÓN 3)
+     ===================================================== -->
+<button id="btnCompartir" class="floating-share-btn" title="Compartir Maratón" type="button">
+    <span>🔗</span>
+</button>
+
+<div id="modalCompartir" class="share-modal">
+    <div class="modal-content">
+        <span id="cerrarModal" class="close-btn">&times;</span>
+        <h3>¡Compartí la Maratón! 📚</h3>
+        <p>Escaneá el código QR o copiá el enlace para llevar la aventura a todos lados.</p>
+        
+        <div class="qr-container">
+            <!-- Asegurate de tener una imagen de QR en tu carpeta assets o ajustá la ruta -->
+            <img src="assets/aficheeeee.jpeg" alt="QR Maratón de Lectura" id="imgQr">
+        </div>
+
+        <button id="btnCopiar" class="copy-link-btn" type="button">Copiar Enlace de la Página</button>
+        <span id="copiadoMsg" class="copiado-msg">¡Enlace copiado al portapapeles! ✨</span>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="app.js"></script>
 
 <!-- =====================================================
      JAVASCRIPT
