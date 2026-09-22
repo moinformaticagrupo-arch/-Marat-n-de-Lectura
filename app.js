@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     title: "ROBOT-MASA",
                     description: "Autor:Sebastián Szabo.",
-                    pdf: "Robot-masa "
+                    pdf: "Robot-masa.pdf "
                 }, 
                  {
                     title: "LA MÁQUINA QUÉ GANÓ LA GUERRA",
