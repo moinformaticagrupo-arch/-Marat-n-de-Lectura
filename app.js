@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (video) {
         video.muted = true; // Arranca muteado por políticas del navegador
+        video.play().catch(err => console.log("Autoplay inicial bloqueado:", err));
     }
 
     if (audioToggleBtn && video) {
@@ -162,9 +163,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (video.muted) {
                 audioToggleBtn.textContent = "🔇 Activar música";
+                audioToggleBtn.classList.remove("active");
             } else {
                 audioToggleBtn.textContent = "🔊 Silenciar";
-                video.play().catch(err => console.log("Bloqueado por autoplay:", err));
+                audioToggleBtn.classList.add("active");
+                video.play().catch(err => console.log("Reproducción bloqueada:", err));
             }
         });
     }
