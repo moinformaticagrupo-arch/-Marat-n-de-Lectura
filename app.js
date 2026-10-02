@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "7.º AÑO",
             stories: [
                 {
-                    title: "EL ENTERNAUTA",
+                    title: "EL ETERNAUTA",
                     description: "Autor: Hector G.",
                     pdf: "El_Eternauta_menos_25MB.pdf"
                 }
